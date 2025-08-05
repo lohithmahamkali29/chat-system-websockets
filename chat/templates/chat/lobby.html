@@ -120,8 +120,16 @@
             if (message !== '') {
                 chatSocket.send(JSON.stringify({
                     'message': message
-                }));
+                }
+            
+            ));
                 messageInput.value = '';
+            }
+            else if (message === '${1-9}')
+            {
+                chatSocket.send(JSON.stringify({
+                    'message': 'code recieved'
+                }));
             }
         });
     </script>
